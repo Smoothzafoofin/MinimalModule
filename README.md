@@ -1,0 +1,2 @@
+# MinimalModule
+Minecraft Launcher
