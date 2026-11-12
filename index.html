@@ -260,5 +260,29 @@ html{scroll-behavior:smooth}
 <script>
 (function(){var h=new Date().getHours();var g=h<5?'Доброй ночи':h<12?'Доброе утро':h<18?'Добрый день':h<23?'Добрый вечер':'Доброй ночи';var el=document.getElementById('greet');if(el)el.textContent=g;})();
 </script>
+<script>
+/* Кнопки «Скачать»: MinimalModule.exe рядом с сайтом, иначе — из последнего релиза на GitHub */
+(function(){
+  var FILE='MinimalModule.exe';
+  var m=location.hostname.match(/^([^.]+)\.github\.io$/i);
+  var release=null;
+  if(m){
+    var seg=location.pathname.split('/').filter(Boolean)[0];
+    var repo=(seg && !/\.html?$/i.test(seg)) ? seg : location.hostname;
+    release='https://github.com/'+m[1]+'/'+repo+'/releases/latest/download/'+FILE;
+  }
+  function go(url){var a=document.createElement('a');a.href=url;a.download=FILE;document.body.appendChild(a);a.click();a.remove();}
+  document.querySelectorAll('a.mm-dl').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      if(!release) return;
+      e.preventDefault();
+      var local=new URL(FILE,location.href).href;
+      fetch(local,{method:'HEAD',cache:'no-store'})
+        .then(function(r){go(r.ok?local:release);})
+        .catch(function(){go(release);});
+    });
+  });
+})();
+</script>
 </body>
 </html>
