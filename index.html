@@ -43,6 +43,19 @@ header.scrolled{border-bottom-color:var(--line)}
 .btn-primary:active{transform:scale(.98)}
 .btn-quiet{color:var(--muted)}
 .btn-quiet:hover{color:var(--text)}
+.btn-line{border:1px solid var(--line-2);color:var(--text)}
+.btn-line:hover{border-color:#3a3a3a;background:var(--panel-2)}
+.btn-line:active{transform:scale(.98)}
+.links .donate{display:inline-flex;align-items:center;gap:6px;color:var(--text)}
+.links .donate svg{width:14px;height:14px}
+
+/* donate */
+.donate-box{margin-top:64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:36px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.donate-box h3{margin:0 0 6px;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.donate-box p{margin:0;font-size:15px;color:var(--muted);max-width:34em}
+.donate-box ul{margin:14px 0 0;padding:0;list-style:none;display:flex;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--text)}
+.donate-box li::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--muted);margin:0 8px 2px 0}
+@media (max-width:640px){.donate-box{padding:24px}.donate-box .btn{width:100%}}
 
 /* hero */
 .hero{padding:120px 0 0;text-align:center}
@@ -144,6 +157,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     <nav class="links" aria-label="Разделы">
       <a class="opt" href="#features">Возможности</a>
       <a class="opt" href="#faq">Вопросы</a>
+      <a class="donate" href="https://minimal.tebex.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Донат</a>
       <a class="get mm-dl" href="MinimalModule.exe" download>Скачать</a>
     </nav>
   </div>
@@ -219,6 +233,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     </div>
   </section>
 
+  <section id="donate">
+    <div class="wrap">
+      <div class="eyebrow r">Сервер MinimalSMP</div>
+      <h2 class="r">Поддержать сервер. <em>Получить Plus.</em></h2>
+      <div class="donate-box r">
+        <div>
+          <h3>Привилегия Plus</h3>
+          <p>Оплата картой через Tebex. Выдаётся автоматически в течение пары минут после оплаты.</p>
+          <ul><li>8 500 кредитов</li><li>Увеличенный регион для привата</li></ul>
+        </div>
+        <a class="btn btn-primary" href="https://minimal.tebex.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+          Донат
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap faq-grid">
       <div>
@@ -242,6 +273,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <a class="btn btn-primary mm-dl" href="MinimalModule.exe" download>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>
         Скачать MinimalModule.exe
+      </a>
+      <a class="btn btn-line" href="https://minimal.tebex.io" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+        Донат
       </a>
     </div>
     <div class="meta r">Windows 10 / 11 · x64</div>
